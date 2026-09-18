@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Databases
+*.db
+*.sqlite3
+
+# Testing & Cache
+.pytest_cache/
+.deepeval/
+
+# IDEs & Local tooling
+.vscode/
+.idea/
+.claude/
+.DS_Store
+*.local.json
+
+# Environment variables
+.env
+.env.*
+!.env.example
