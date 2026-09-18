@@ -1,4 +1,5 @@
 """Execute one claimed run, step by step, so that it can be resumed after a crash."""
+import os
 import time
 from collections.abc import Callable
 
@@ -8,7 +9,8 @@ from app.placement_db import PlacementDb
 from app.providers import AgentError
 from app.tools.placement_tools import PlacementTools
 
-MAX_STEPS = 12
+MAX_STEPS = int(os.environ.get("MAX_STEPS", "20"))
+
 
 SYSTEM = """You are the Placement Assistant for an engineering college's placement cell.
 You are talking to the student with roll number {student_id}. Act only for this student.

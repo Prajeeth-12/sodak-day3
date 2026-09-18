@@ -10,7 +10,7 @@ Nothing happens until a worker is running (python -m scripts.worker --mock).
 import argparse
 import time
 
-from app.config import GEMINI_MODEL, open_stores
+from app.config import MODEL, open_stores
 from scripts._term import CYAN, DIM, GREEN, RED, RESET, print_step
 
 
@@ -24,7 +24,7 @@ def main() -> None:
 
     store, _ = open_stores()
     thread_id = a.thread or store.create_thread(a.student)
-    run_id = store.enqueue(thread_id, a.text, GEMINI_MODEL)
+    run_id = store.enqueue(thread_id, a.text, MODEL)
     print(f"{DIM}thread {thread_id}{RESET}\n{CYAN}run {run_id}{RESET} queued")
     if a.no_follow:
         return
